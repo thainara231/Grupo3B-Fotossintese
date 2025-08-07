@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiosidade</title>
+  
+  <style>
+    .curiosidade-container {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+    }
+
+    .curiosidade-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .seta {
+      transition: transform 0.3s ease;
+    }
+
+    .expandido .seta {
+      transform: rotate(90deg);
+    }
+
+    .curiosidade-conteudo {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .curiosidade-conteudo a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .curiosidade-conteudo a:hover {
+      text-decoration: underline;
+    }
+    .tooltip {
+  position: relative;
+  cursor: pointer;
+  color: #2a7ae2;
+  font-weight: bold;
+}
+
+.tooltip-box {
+  visibility: hidden;
+  width: 240px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 10;
+  top: 125%; /* abaixo da palavra */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.tooltip-box img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.tooltip:hover .tooltip-box {
+  visibility: visible;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="curiosidade-container">
+  <div class="curiosidade-header" onclick="toggleCuriosidade(this)">
+    Saiba mais da fase escura
+    <span class="seta">▶</span>
+  </div>
+  <div class="curiosidade-conteudo">
+    A fase escura da fotossíntese, também chamada de ciclo de Calvin, não depende diretamente da luz e ocorre no estroma do cloroplasto. É nela que o CO₂ é fixado e convertido em glicose.  
+    <br><br>
+    <a href="https://www.todamateria.com.br/fase-escura-da-fotossintese/" target="_blank">Fonte: Toda Matéria</a>
+  </div>
+</div>
+
+<script>
+  function toggleCuriosidade(element) {
+    const container = element.parentElement;
+    container.classList.toggle("expandido");
+    const conteudo = container.querySelector(".curiosidade-conteudo");
+    conteudo.style.display = conteudo.style.display === "block" ? "none" : "block";
+  }
+</script>
+
+
+<p>
+  A <span class="tooltip">fotossíntese
+    <span class="tooltip-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Photosynthesis.gif/220px-Photosynthesis.gif" alt="Fotossíntese" />
+      <strong>Fotossíntese:</strong> processo pelo qual plantas produzem energia usando luz solar.
+    </span>
+  </span> é essencial para a vida na Terra.
+</p>
+
+
+</body>
+</html>
