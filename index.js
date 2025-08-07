@@ -1,4 +1,4 @@
-
+//intro
 window.addEventListener("load", () => {
   const intro = document.getElementById("intro");
   const site = document.getElementById("site");
@@ -11,3 +11,5 @@ window.addEventListener("load", () => {
     }, 1000); // espera 1 segundo para sumir totalmente
   }, 2000); // mostra a intro por 2 segundos
 });
+
+
